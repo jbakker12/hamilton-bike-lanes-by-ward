@@ -18,7 +18,8 @@ function App() {
       <div className = "map">
         <Map/>       
       </div>
-      <div className = "chart">
+      <div className = "table" >
+        <br></br>
         <Table/>
       </div>
     </div>

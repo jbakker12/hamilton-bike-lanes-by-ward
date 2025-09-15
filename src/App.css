@@ -1,3 +1,14 @@
+/* Colour Codes for Rankings
+
+#073b4c
+#118ab2
+#06d6a0
+#b08c71
+#f78c6b
+#ef476f
+
+*/
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +50,23 @@
 
 .read-the-docs {
   color: #888;
+}
+
+table{
+  margin: auto;
+  width: 100%;
+  padding: 1px;
+  border-collapse: collapse;
+}
+
+table,td{
+  border: 1px solid white;
+}
+
+thead{
+  font-weight: bold;
+}
+
+#tier4{
+  font-weight: bolder;
 }
