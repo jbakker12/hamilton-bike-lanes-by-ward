@@ -52,7 +52,7 @@ const Map = () => {
         source: 'wards', // Reference the source by its ID
         paint: {
           'line-width': 2,
-          'line-color': '#00578e'
+          'line-color': '#a8a8a8ff'
       }
     });
   })
@@ -92,7 +92,7 @@ const Map = () => {
         source: 'bike-share-hubs', // Reference the source by its ID
         paint: {
           'circle-radius': 3,
-          'circle-color': '#800080'
+          'circle-color': '#2d2d2dff'
       }
     });
   })
