@@ -19,6 +19,23 @@ const Map = () => {
     });
 
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
+    
+    map.on('load',function(){map.resize();})
+
+
+    //REMOVE building layers
+    map.on('load', () => {
+      const layers = map.getStyle().layers || [];
+
+      layers.forEach((layer) => {
+        if (
+          layer['source-layer'] === 'building' || 
+          layer.id.toLowerCase().includes('building')
+        ) {
+          map.setLayoutProperty(layer.id, 'visibility', 'none');
+        }
+      });
+    });
 
     //add Wards
     map.on('load', function(){
@@ -34,8 +51,8 @@ const Map = () => {
         type: 'line',
         source: 'wards', // Reference the source by its ID
         paint: {
-          'line-width': 3,
-          'line-color': '#880808'
+          'line-width': 2,
+          'line-color': '#a8a8a8ff'
       }
     });
   })
@@ -59,7 +76,27 @@ const Map = () => {
       }
     });
   })
-    
+
+  //ADD BIKE SHARE HUBS
+     map.on('load', function(){
+      map.addSource('bike-share-hubs', {
+      type: 'geojson',
+      data: '/Hamilton_Bike_Share_Incorporated_Hubs.geojson'
+      });
+
+
+    //then add a layer
+    map.addLayer({
+        id: 'bike-share-hubs-layer',
+        type: 'circle',
+        source: 'bike-share-hubs', // Reference the source by its ID
+        paint: {
+          'circle-radius': 3,
+          'circle-color': '#2d2d2dff'
+      }
+    });
+  })
+
     return () => map.remove();
 
     

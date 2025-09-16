@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Map from './Map.jsx'
 import React from 'react'
+import Table from './Table.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,14 +16,13 @@ function App() {
           <br></br>The goal of this page is to highlight the distribution of bike lanes, particularly highlighting the number of bike lanes in wards with higher poverty rates.
         </p>
       <div className = "map">
-        <Map/>
-     
-        
+        <Map/>       
       </div>
-      <div className = "chart">
-     
+      <div className = "table" >
+        <br></br>
+        <Table/>
       </div>
-      </div>
+    </div>
     </>
   )
 }
