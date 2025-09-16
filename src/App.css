@@ -67,6 +67,10 @@ thead{
   font-weight: bold;
 }
 
-#tier4{
-  font-weight: bolder;
+#dotDisclaimer{
+  text-align: right;
+  font-size: 0.9em;
+  margin-top: 0.3em;
+  margin-bottom: 1.5em;
+  font-weight:500;
 }
